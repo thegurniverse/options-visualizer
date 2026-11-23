@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Option Visualizer v5</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<main class="app-shell">
+<div id="optcalc5" class="calculator">
+<div class="selector-grid">
+<div><div class="eyebrow">OPTION TYPE</div><div class="seg" id="type"><button class="active" data-v="Call" type="button">CALL</button><button data-v="Put" type="button">PUT</button></div></div>
+<div><div class="eyebrow">POSITION</div><div class="seg" id="pos"><button class="active" data-v="Long" type="button">LONG</button><button data-v="Short" type="button">SHORT</button></div></div>
+</div>
+<div class="chart-heading"><b>Profit / Loss at expiry</b><span>Drag markers to adjust</span></div>
+<svg id="plot" class="chart" viewBox="0 0 700 390" role="img" aria-label="Interactive option payoff graph">
+<defs><linearGradient id="plfill5" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#3984df" stop-opacity=".22"/><stop offset="100%" stop-color="#3984df" stop-opacity=".015"/></linearGradient></defs>
+<g id="grid"></g><path id="fill" fill="url(#plfill5)"/><path id="curve" fill="none" stroke="#3984df" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><line id="zero" x1="55" x2="675" stroke="currentColor" stroke-width="2.2" opacity=".8"/><g id="markers"></g><g id="labels"></g>
+</svg>
+<div class="legend"><span><i class="blue">━</i> Profit / Loss</span><span><i class="purple">◆</i> Exercise price (K)</span><span><i class="orange">◆</i> Stock price (S)</span></div>
+<div class="hint">Drag K or S horizontally. Drag Pay / Receive vertically to change premium.</div>
+<div class="greeks">
+<div class="greek"><small>Delta</small><b id="delta">+ve</b></div><div class="greek"><small>Gamma</small><b id="gamma">+ve</b></div><div class="greek"><small>Vega</small><b id="vega">+ve</b></div><div class="greek"><small>Theta</small><b id="theta">−ve</b></div><div class="greek"><small>Rho</small><b id="rho">+ve</b></div>
+</div>
+<div class="inputs">
+<div class="param"><label for="inputK">STRIKE (K)</label><input id="inputK" type="number" min="0" step="0.1" value="100"></div>
+<div class="param"><label for="inputS">STOCK PRICE (S)</label><input id="inputS" type="number" min="0" step="0.1" value="105"></div>
+<div class="param"><label for="inputP">PREMIUM (OP)</label><input id="inputP" type="number" min="0" step="0.1" value="10"></div>
+</div>
+<div class="actions"><button id="reset" type="button">Reset values</button></div>
+</div></main></body></html>
