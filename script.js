@@ -45,7 +45,7 @@ function draw(){
  const txt=el('text',{x:lx,y:ly+5,'text-anchor':'middle',fill:pos==='Long'?'#e05252':'#15966b','font-size':15,'font-weight':700,cursor:'ns-resize','data-drag':'P'},$('markers'));txt.textContent=(pos==='Long'?'Pay ':'Receive ')+fmt(P);
  el('rect',{x:lx-48,y:ly-17,width:96,height:34,fill:'transparent',cursor:'ns-resize','data-drag':'P'},$('markers'));
  setGreek('delta',type==='Call'?(pos==='Long'?'+ve':'−ve'):(pos==='Long'?'−ve':'+ve'));
- setGreek('gamma',pos==='Long'?'+ve':'−ve');setGreek('vega',pos==='Long'?'+ve':'−ve');setGreek('theta',pos==='Long?'−ve':'+ve');
+ setGreek('gamma',pos==='Long'?'+ve':'−ve');setGreek('vega',pos==='Long'?'+ve':'−ve');setGreek('theta',pos==='Long'?'−ve':'+ve');
  setGreek('rho',type==='Call'?(pos==='Long'?'+ve':'−ve'):(pos==='Long'?'−ve':'+ve'));syncInputs();
 }
 [['inputK','K'],['inputS','S'],['inputP','P']].forEach(([id,key])=>{
